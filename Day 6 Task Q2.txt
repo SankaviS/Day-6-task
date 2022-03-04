@@ -1,0 +1,385 @@
+
+1.Find the culprit.
+fix.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script>
+ alert( "I’m JavaScript!");
+ </script>
+ Whats the error in this ?
+</body>
+</html>
+
+Ans:Quotations were not balanced in the alert.
+
+2.Find the culprit and invoke the alert.
+
+fix.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src="scripts.js"></script>
+</body>
+</html>
+
+scripts.js:
+alert(“I’m invoked!”);
+
+Ans:Changed the src name to'scripts.js'.
+
+3.Explain the below how it works.
+
+explain.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+script.js:
+alert("I'm JavaScript!");
+alert('Hello') // this line is not having semicolon
+alert(`Wor
+ ld`)
+alert(3 +
+1
++ 2); // this is multiple line code and its working
+
+Explanation: 
+In this example, line break is considered as delimiter and the semicolon is inserted behind the scenes. This is called “automatic semicolon insertion”.
+When backticks ie literal are used, all those extra spaces are added to the result.
+
+4.Fix the below to alert Guvi geek.
+
+fix.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+script.js:
+let admin=9, fname=10.5; 
+fname = "Guvi";
+lname = "geek"
+admin = fname+" "+lname;
+alert( admin );
+
+Ans: Added space between fname and lname.
+
+5.Fix the below to alert hello Guvi geek.
+
+fix.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+script.js:
+let fname=10.5; 
+fname = "Guvi";
+lname = "geek"
+let name = fname+" "+lname;
+alert(`hello ${name}`);
+
+Ans: Added space between fname and lname and used backtick in alert.
+
+6.Fix the below to alert sum of two numbers.
+
+fix.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+script.js:
+let a = prompt("First number?");
+let b = prompt("Second number?");
+alert( +a + +b);
+
+Ans: Converted the input from string to number.
+
+7.If you run the below scritpt you will get “Code is Blasted”
+Explain Why the Code is blasted and how to diffuse it and get “Diffused”.
+
+fix.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+script.js:
+var a = 2 > 12;
+if (a) {
+  console.log("Code is Blasted")
+}
+else
+{
+  console.log("Diffused") 
+}
+
+Ans: 2 and 12 are of string hence first digits only get compared and that will give the result as true since 2 is greater than 1(first digit of 12). 2 and 12 should be of type number to display the output as 'Diffused'.
+
+8.How to get the success in console.
+
+fix.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+script.js:
+let a = prompt("Enter a number?");
+a = parseInt(a);
+if (a) {
+ console.log( 'OMG it works for any number inc 0' );
+}
+else
+{
+ console.log( "Success" );
+}
+
+Ans: Since 'a' is a string, condition works for every number. When 'a' is converted to a number, 'Success' will be displayed when input number is 0.
+
+9.How to get the correct score in console.
+
+fix.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+script.js:
+let value = prompt('How many runs you scored in this ball');
+if (value == 4) {
+      console.log("You hit a Four");
+} else if (value == 6) {
+      console.log("You hit a Six");
+} else {
+      console.log("I couldn't figure out");
+}
+
+Ans: value will be of string, hence value will be either converted to number or double equals to operator should be used.
+
+10.Fix the code to welcome the Employee.
+
+fix.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+script.js:
+let login = 'Employee';
+let message = (login == 'Employee') ? 'Greetings':
+  (login == 'Director') ? 'Greetings' :
+  (login == '') ? 'No login' :
+  '';
+console.log(message);
+
+Ans: Added 'Greetings' in place of true expression.
+
+11.Fix the code to welcome the boss.
+
+fix.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+script.js:
+let message;
+if (null || 2 || undefined )
+{
+  message = "welcome boss";
+}
+else
+{
+  message = "Go away";
+}
+  console.log(message);
+
+Ans: message declared inside the block will have only block scope as it is declared as let. Removed the let inside the block, hence message declared outside of the block will get reassigned.
+
+12.Fix the code to welcome the boss.
+
+fix.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+script.js:
+let message;
+let lock = 0;
+if (null || lock || undefined )
+{
+  message = "Go away";
+}
+else
+{
+ message = "welcome";
+}
+  console.log(message);
+
+Ans: Changed the value of lock to 0 which prevented the message from reassigning to 'Go away'.
+
+13.Fix the code to welcome the boss.
+
+fix.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+script.js:
+let message;
+let lock = 0;
+//Dont change any code below this
+if (lock && " " || undefined )
+{
+  message = "Go away";
+}
+else
+{
+ message = "welcome";
+}
+console.log(message);
+
+Ans: Changed the value of lock to 0 which prevented the message from reassigning to 'Go away'.
+
+14.Change the code to print
+3
+2
+1
+
+fix.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+script.js:
+let i = 3;
+while (i) {
+  console.log( i-- );
+}
+
+Ans: Changed the pre decrement to post decrement.
+
+15.Change the code to print 1 to 10 in 4 lines
+
+fix.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+script.js:
+for(let i=1;i<=10;i++)
+{
+    console.log(i);
+}
+
+Ans: Used for loop.
+
+16.Change the code to print even numbers
+
+fix.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+script.js:
+for (let num = 2; num <= 20; num += 2) {
+    console.log(num)
+  }
+  
+Ans: Incremented the num by 2.
+
+17.Change the code to print all the gifts.
+
+fix.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+script.js:
+let gifts = ["teddy bear", "drone", "doll"];
+for (let i = 0; i < 3; i++) {
+  console.log(`Wrapped ${gifts[i]} and added a bow!`);
+}
+
+Ans: Used backtick and removed quotes around gifts[i].
+
+18.Fix the code to disarm the bomb.
+
+fix.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+script.js:
+let countdown = 100;
+while (countdown > 0) {
+  countdown--;
+    if(countdown == 0)
+  {
+   console.log("bomb triggered");
+  }
+  break;
+}
+
+Ans: Added break to stop the decrementing the countdown.
+
+19.Whats the msg printed and why?
+
+var lemein = “0”;
+var lemeout = 0;
+var msg = “”;
+if (lemein) {
+ msg += “hi”;
+ }
+if (lemeout) {
+ msg += ‘Hello’;
+}
+console.log(msg);
+
+Ans: hi will be printed because lemein is String and lemeout is Number.
+
+
+
